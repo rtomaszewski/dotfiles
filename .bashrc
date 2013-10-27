@@ -52,3 +52,5 @@ for i in $HOME/.bashrc_*; do
   . $i
 done
 
+homeshick check
+
