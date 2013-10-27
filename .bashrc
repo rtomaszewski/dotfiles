@@ -1,4 +1,3 @@
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
         . /etc/bashrc
@@ -39,3 +38,9 @@ alias ipython='ipython  --colors Linux --autocall=2'
 
 
 alias homeshick="source $HOME/.homesick/repos/homeshick/bin/homeshick.sh"
+
+for i in $HOME/.bashrc_*; do 
+  #echo $i; done
+  . $i
+done
+
