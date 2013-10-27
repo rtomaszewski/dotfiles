@@ -1,4 +1,3 @@
-
 export HISTSIZE=100000
 export HISTFILESIZE=200000
 # export EDITOR=vim
@@ -32,3 +31,5 @@ alias myip='curl --silent checkip.dyndns.org | egrep --only-matching "[0-9\.]+"'
 #alias ipython='ipython --colors Linux'
 alias ipython='ipython  --colors Linux --autocall=2'
 
+
+alias homeshick="source $HOME/.homesick/repos/homeshick/bin/homeshick.sh"
