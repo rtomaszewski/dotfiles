@@ -1,3 +1,9 @@
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
 export HISTSIZE=100000
 export HISTFILESIZE=200000
 # export EDITOR=vim
