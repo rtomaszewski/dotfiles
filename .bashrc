@@ -20,7 +20,15 @@ alias dir='dir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll='ls -alF'
+
+# cisco compatible commands 
+alias i='egrep --color=auto'
+alias e='egrep -v --color=auto'
+
+# list files in hronological order
+# the last modified/created at the bottom
+alias ll='ls -altrF'
+
 alias la='ls -A'
 alias l='ls -al'
 alias i='egrep'
