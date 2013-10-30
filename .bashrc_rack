@@ -1,3 +1,4 @@
-
 alias n=net-cli
 alias p=port-cli
+
+export PATH=$PATH:/opt/netsec/
