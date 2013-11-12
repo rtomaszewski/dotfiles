@@ -1,4 +1,5 @@
 alias n=net-cli
 alias p=port-cli
+alias t=telnet
 
 export PATH=$PATH:/opt/netsec/
