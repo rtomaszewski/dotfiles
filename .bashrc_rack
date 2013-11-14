@@ -1,4 +1,16 @@
-alias n=net-cli
+
+
+
+
+# accepts a string and filters it for the device id 
+# example:
+#   n 545843: 545843-db1.kirklands-law.co.uk
+#   n 545843-db1.kirklands-law.co.uk
+#
+function n() { devid=$(echo $@ | awk '-F[: -]' '{print $1;}'); echo $devid; net-cli $devid ; }
+
+#alias n=net-cli
+
 alias p=port-cli
 alias t=telnet
 
