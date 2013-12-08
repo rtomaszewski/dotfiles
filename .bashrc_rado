@@ -1,3 +1,4 @@
+# my custom bash .bashrc file
 
 export HISTSIZE=100000
 export HISTFILESIZE=200000
