@@ -1,0 +1,20 @@
+
+
+export MY_AUX_SSH_KEY_PRIV="$HOME/.ssh/id_rsa_auxiliary"
+export MY_AUX_SSH_KEY_PUB="$HOME/.ssh/id_rsa_auxiliary.pub"
+
+# a shortcat referencing our pub key
+# and the full nova command how to use it 
+#
+# auxnova  --image e0ed4adb-3a00-433e-a0ac-a51f1bc1ea3d --flavor 2 test_cs
+#
+alias novaaux='nova boot --file "$MY_AUX_SSH_KEY_PUB"
+
+
+# how to login to your cs
+#
+# auxssh <ip> 
+#
+
+function auxssh { ip=$1; shift; ssh -i $MY_AUX_SSH_KEY_PRIV -o "StrictHostKeyChecking no" $@ root@$ip ; }
+
