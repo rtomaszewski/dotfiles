@@ -1,3 +1,6 @@
+
+[[ "DOTFILES_BASHRC_RADO" != "yes" ]] && return 
+
 # my custom bash .bashrc file
 
 export HISTSIZE=100000
