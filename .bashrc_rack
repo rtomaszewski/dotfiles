@@ -1,6 +1,5 @@
 
-
-[[ "DOTFILES_BASHRC_RACK" != "yes" ]] && return 
+[[ "$DOTFILES_BASHRC_RACK" != "yes" ]] && return 
 
 # accepts a string and filters it for the device id 
 # example:
