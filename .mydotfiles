@@ -1,9 +1,10 @@
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 homeshick check
 
-[[ "DOTFILES_CONFIG_OPTIONS" != "yes" ]] && return 
+
 source .mydotfiles_options
 
+[[ "DOTFILES_CONFIG_OPTIONS" != "yes" ]] && return 
 for i in $HOME/.bashrc_*; do
   echo $i
   source $i
