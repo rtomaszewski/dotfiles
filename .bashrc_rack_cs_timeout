@@ -1,0 +1,16 @@
+
+
+# http://rtomaszewski.blogspot.co.uk/2012_02_01_archive.html
+
+[[ "$DOTFILES_BASHRC_RACK_CS_TIMEOUT" != "yes" ]] && return 
+
+cat >> .profile <<DONE
+while true; do
+  tput sc 
+  tput cup $(tput lines) $(tput cols)
+  tput cub 8 
+  echo -n $(date +%T)
+  tput rc 
+  sleep 30 
+done & 
+DONE
