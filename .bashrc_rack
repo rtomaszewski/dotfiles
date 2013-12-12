@@ -1,5 +1,6 @@
 
 
+[[ "DOTFILES_BASHRC_RACK" != "yes" ]] && return 
 
 # accepts a string and filters it for the device id 
 # example:
@@ -16,8 +17,6 @@ function curlip { curl -v -o /tmp/rado_curl_tmp.html -s $@ 2>&1 | egrep --color=
 
 alias p=port-cli
 alias t=telnet
-
-
 
 
 export PATH=$PATH:/opt/netsec/
