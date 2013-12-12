@@ -7,6 +7,7 @@ export MY_AUX_SSH_KEY_PUB="$HOME/.ssh/id_rsa_auxiliary.pub"
 # auxnova --image 80fbcb55-b206-41f9-9bc2-2dd7aac6c061 --flavor 2 test
 #
 alias auxnova='nova boot --file /root/.ssh/authorized_keys="$MY_AUX_SSH_KEY_PUB"'
+alias auxnova_create_cs512='auxnova --image 80fbcb55-b206-41f9-9bc2-2dd7aac6c061 --flavor 2 test'
 
 # how to login to your cs
 #
