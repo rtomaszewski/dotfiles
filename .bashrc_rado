@@ -1,5 +1,4 @@
-
-[[ "DOTFILES_BASHRC_RADO" != "yes" ]] && return 
+[[ "$DOTFILES_BASHRC_RADO" != "yes" ]] && return 
 
 # my custom bash .bashrc file
 
