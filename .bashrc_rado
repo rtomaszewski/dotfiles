@@ -43,3 +43,10 @@ alias ipython='ipython  --colors Linux --autocall=2'
 
 
 export PATH=$PATH:.
+
+ssh-agent
+aux=/tmp/$$_ssh-agent.txt
+ssh-agent > $aux
+source $aux
+
+ssh-add $HOME/.ssh/aux_key
