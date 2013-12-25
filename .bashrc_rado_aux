@@ -1,4 +1,4 @@
-[[ "$DOTFILES_BASHRC_RADO_AUX" != "yes" ]] && return 
+[[ "$DOTFILES_BASHRC_RADO_AUX" != "yes" ]] && echo "skiping file (modify the settings in .mydotfiles_options file)" && return 
 
 export MY_AUX_SSH_KEY_PRIV="$HOME/.ssh/id_rsa_auxiliary"
 export MY_AUX_SSH_KEY_PUB="$HOME/.ssh/id_rsa_auxiliary.pub"
