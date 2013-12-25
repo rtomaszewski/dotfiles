@@ -1,8 +1,7 @@
 
-
 # http://rtomaszewski.blogspot.co.uk/2012_02_01_archive.html
 
-[[ "$DOTFILES_BASHRC_RACK_CS_TIMEOUT" != "yes" ]] && return 
+[[ "$DOTFILES_BASHRC_RACK_CS_TIMEOUT" != "yes" ]] && echo "skiping file (modify the settings in .mydotfiles_options file)" && return 
 
 cat >> .profile <<DONE
 while true; do
