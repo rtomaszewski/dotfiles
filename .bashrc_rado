@@ -44,7 +44,7 @@ alias myip='curl --silent checkip.dyndns.org | egrep --only-matching "[0-9\.]+"'
 alias ipython='ipython  --colors Linux --autocall=2'
 
 
-export PATH=$PATH:.
+export PATH=$PATH:$PATH:~/tools:.
 
 ssh-agent
 aux=/tmp/$$_ssh-agent.txt
