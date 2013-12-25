@@ -1,5 +1,4 @@
-
-[[ "$DOTFILES_BASHRC_RACK" != "yes" ]] && return 
+[[ "$DOTFILES_HRC_RACK" != "yes" ]] && echo "skiping file (modify the settings in .mydotfiles_options file)" && return
 
 # accepts a string and filters it for the device id 
 # example:
