@@ -1,4 +1,4 @@
-[[ "$DOTFILES_BASHRC_RADO" != "yes" ]] && return 
+[[ "$DOTFILES_BASHRC_RADO" != "yes" ]] && echo "skiping file (modify the settings in .mydotfiles_options file)" && return 
 
 # my custom bash .bashrc file
 
