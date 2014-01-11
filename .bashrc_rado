@@ -27,6 +27,7 @@ alias e='egrep -v --color=auto'
 # list files in hronological order 
 # the last modified/created at the bottom
 alias ll='ls -altrF'
+alias llh='ls -altrFh'
 
 alias la='ls -A'
 alias l='ls -al'
