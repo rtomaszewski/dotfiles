@@ -1,0 +1,27 @@
+
+RAX_DC=$(hostname | cut -d'.' -f2)
+RAX_HOST=$(hostname | cut -d'.' -f1)
+
+# https://wiki.archlinux.org/index.php/Color_Bash_Prompt
+
+txtrst='\[\e[0m\]'    # Text Reset
+
+txtgrn='\[\e[0;32m\]' # Green
+bldgrn='\[\e[1;32m\]' # Green
+bakgrn='\[\e[42m\]'   # Green
+
+txtblu='\[\e[0;34m\]' # Blue
+bldblu='\[\e[1;34m\]' # Blue
+bakblu='\[\e[44m\]'   # Blue
+
+PS1_FW_BASTION="$txtgrn[\u@\h $txtrst$bakgrn$RAX_DC$txtrst $txtgrn\W] $txtrst"
+PS1_SW_BASTION="$bldblu[\u@\h $txtrst$bakblu$RAX_DC$txtrst $bldblu\W] $txtrst"
+
+
+if $(hostname | grep -q -i cbast); then 
+   PS1=$PS1_FW_BASTION
+else 
+   PS1=$PS1_SW_BASTION
+fi
+
+export PS1
