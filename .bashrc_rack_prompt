@@ -1,4 +1,6 @@
 
+[[ "$DOTFILES_BASHRC_RACK_PROMPT" != "yes" ]] && echo "skiping file (modify the settings in .mydotfiles_options file)" && return
+
 RAX_DC=$(hostname | cut -d'.' -f2)
 RAX_HOST=$(hostname | cut -d'.' -f1)
 
