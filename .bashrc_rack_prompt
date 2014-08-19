@@ -26,4 +26,10 @@ else
    PS1=$PS1_SW_BASTION
 fi
 
+
+type_command_cmd=$(type -P type-command)
+if [ "$type_command_cmd" != "" ] ; then
+  PS1="${PS1}"'$($type_command_cmd)'
+fi
+
 export PS1
