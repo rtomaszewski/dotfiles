@@ -21,4 +21,4 @@ alias t=telnet
 alias T=t
 
 
-export PATH=$PATH:/opt/netsec/
+export PATH=$PATH:/opt/netsec/:~/bin
