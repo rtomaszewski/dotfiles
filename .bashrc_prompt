@@ -1,0 +1,47 @@
+
+# sysctl hw.ncpu
+
+function BASH_PROMOPT_MEM_MAC() {
+    FREE_BLOCKS=$(vm_stat | grep free | awk '{ print $3 }' | sed 's/\.//')
+    INACTIVE_BLOCKS=$(vm_stat | grep inactive | awk '{ print $3 }' | sed 's/\.//')
+    SPECULATIVE_BLOCKS=$(vm_stat | grep speculative | awk '{ print $3 }' | sed 's/\.//')
+    
+    FREE=$((($FREE_BLOCKS+SPECULATIVE_BLOCKS)*4096/1048576))
+    INACTIVE=$(($INACTIVE_BLOCKS*4096/1048576))
+    TOTAL=$((($FREE+$INACTIVE)))
+    
+    # echo Free:       $FREE MB
+    # echo Inactive:   $INACTIVE MB
+    # echo Total free: $TOTAL MB
+    
+    echo -n "$(( $(sysctl -n hw.memsize) / 1048576 ))/$TOTAL (i:$INACTIVE+s:$FREE)"
+}
+
+function BASH_PROMOPT_MEM_SWAP() {
+    FREE_BLOCKS=$(vm_stat | grep free | awk '{ print $3 }' | sed 's/\.//')
+    INACTIVE_BLOCKS=$(vm_stat | grep inactive | awk '{ print $3 }' | sed 's/\.//')
+    SPECULATIVE_BLOCKS=$(vm_stat | grep speculative | awk '{ print $3 }' | sed 's/\.//')
+    
+    FREE=$((($FREE_BLOCKS+SPECULATIVE_BLOCKS)*4096/1048576))
+    INACTIVE=$(($INACTIVE_BLOCKS*4096/1048576))
+    TOTAL=$((($FREE+$INACTIVE)))
+    
+    # echo Free:       $FREE MB
+    # echo Inactive:   $INACTIVE MB
+    # echo Total free: $TOTAL MB
+    
+    echo -n $(sysctl vm.swapusage | gsed "s/.*total.* \([0-9]\+\).*used.* \([0-9]\+\).*free.*/\1\/\2/g")
+}
+
+txtred="\e[0;31m" # Red
+
+# description 
+# [02:38:07][cmd 496:0] rado4752@MMV79XFD56(Darwin) [mem 8192/2580 (i:2492+s:88)]        [swap 1024/135] [proc 244][l5 1.55] [u 1] [ttys014] [bg 0] /Users/rado4752
+#  time      history               host     os          total/free  inactive+speculative   total/used     # of proc load     login users     jobs    pwd
+# 
+
+export PS1='\n[\t][cmd $(( \! -1 )):'"${txtred}"'$?\[$(tput sgr0)\]] \[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 2)\]\H\[$(tput sgr0)\]($(uname)) [mem \[$(tput setaf 5)\]$(BASH_PROMOPT_MEM_MAC)\[$(tput sgr0)\]] [swap \[$(tput setaf 1)\]$(BASH_PROMOPT_MEM_SWAP)\[$(tput sgr0)\]] \[$(tput setaf 3)\][proc $(ps ax | wc -l | tr -d " ")]$(w | head -1 | gsed "s/.*\([0-9]\+\) \+user.*: \+\([0-9\.]\+\).*/[l5 \2]\[$(tput sgr0)\] [u \[$(tput setaf 1)\]\1\[$(tput sgr0)\]]/") [\l] [bg \[$(tput setaf 1)\]\j\[$(tput sgr0)\]] \[$(tput setaf 6)\]$(pwd)\[$(tput sgr0)\] \n$ '
+
+
+# export PS1='\h:\W \u\$ '
+
