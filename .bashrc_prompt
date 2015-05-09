@@ -40,7 +40,7 @@ txtred="\e[0;31m" # Red
 #  time      history               host     os          total/free  inactive+speculative   total/used     # of proc load     login users     jobs    pwd
 # 
 
-export PS1='\n[\t][cmd $(( \! -1 )):'"${txtred}"'$?\[$(tput sgr0)\]] \[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 2)\]\H\[$(tput sgr0)\]($(uname)) [mem \[$(tput setaf 5)\]$(BASH_PROMOPT_MEM_MAC)\[$(tput sgr0)\]] [swap \[$(tput setaf 1)\]$(BASH_PROMOPT_MEM_SWAP)\[$(tput sgr0)\]] \[$(tput setaf 3)\][proc $(ps ax | wc -l | tr -d " ")]$(w | head -1 | gsed "s/.*\([0-9]\+\) \+user.*: \+\([0-9\.]\+\).*/[l5 \2]\[$(tput sgr0)\] [u \[$(tput setaf 1)\]\1\[$(tput sgr0)\]]/") [\l] [bg \[$(tput setaf 1)\]\j\[$(tput sgr0)\]] \[$(tput setaf 6)\]$(pwd)\[$(tput sgr0)\] \n$ '
+export PS1='\n[\t][cmd $(( \! -1 )):'"${txtred}"'$?\[$(tput sgr0)\]] \[$(tput setaf 2)\]\u\[$(tput sgr0)\]@\[$(tput setaf 2)\]\H\[$(tput sgr0)\]($(uname)) [mem \[$(tput setaf 5)\]$(BASH_PROMOPT_MEM_MAC)\[$(tput sgr0)\]] [swap \[$(tput setaf 1)\]$(BASH_PROMOPT_MEM_SWAP)\[$(tput sgr0)\]] \[$(tput setaf 3)\][proc $(ps ax | wc -l | tr -d " ")]$(w | head -1 | gsed "s/.*\([0-9]\+\) \+user.*: \+\([0-9\.]\+\).*/[l5 \2]\[$(tput sgr0)\] [u \[$(tput setaf 1)\]\1\[$(tput sgr0)\]]/") [$$:\l] [bg \[$(tput setaf 1)\]\j\[$(tput sgr0)\]] \[$(tput setaf 6)\]$(pwd)\[$(tput sgr0)\] \n$ '
 
 
 # export PS1='\h:\W \u\$ '
