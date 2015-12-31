@@ -1,0 +1,20 @@
+# Insert your preferred key mappings here.
+# switch between tabs left and right
+# scroll page up or scroll page down when viewing a page
+unmap K
+unmap J
+unmap j
+unmap k
+unmap l
+unmap d
+
+map j previousTab
+map l nextTab
+map i scrollUp
+map k scrollPageDown
+
+# swap the keys, by default we want to open every page in new tab
+unmap f
+unmap F 
+map f LinkHints.activateModeToOpenInNewForegroundTab 
+map F LinkHints.activateMode
