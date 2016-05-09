@@ -13,7 +13,12 @@ alias N=n
 # http://stackoverflow.com/questions/981601/colorized-grep-viewing-the-entire-file-with-highlighting
 function curlip { curl -v -o /tmp/rado_curl_tmp.html -s $@ 2>&1 | egrep --color=always '([0-9]{1,3}[.]){3}[0-9]+|302|$' ; }
 
-
+function ssh-noconf {
+    ssh -F /dev/null -a -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -l $USER $@
+}
+export -f ssh-noconf
+alias s=ssh-noconf
+# alias t=ssh-noconf
 
 alias p=port-cli
 alias P=p
